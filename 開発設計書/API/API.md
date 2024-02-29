@@ -34,7 +34,6 @@
 #### 地点情報の削除
 - DELETE `/api/locations/{location_id}`
   - 特定の地点を削除します。
-</details>
 ---
 ## Trip
 #### 出船予定の登録
