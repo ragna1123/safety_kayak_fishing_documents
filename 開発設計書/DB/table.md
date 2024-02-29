@@ -1,4 +1,6 @@
-## Users
+# テーブル定義
+
+## Users (ユーザー情報)
 
 | Field             | Type         | Description         | Constraints          |
 |-------------------|--------------|---------------------|----------------------|
@@ -8,7 +10,7 @@
 | `password_hash`   | VARCHAR(255) | パスワードのハッシュ値 | NN                 |
 | `profile_image_url` | VARCHAR(255) | プロフィール画像のURL | NULL許容           |
 
-## Locations
+## Locations (釣行ポイント)
 
 | Field            | Type          | Description       | Constraints          |
 |------------------|---------------|-------------------|----------------------|
@@ -19,7 +21,7 @@
 | `longitude`      | DECIMAL(11, 8)| 経度               | NN                   |
 | `user_id`        | INT           | ユーザーのID       | FK                   |
 
-## Trips
+## Trips (出船スケジュール)
 
 | Field            | Type          | Description       | Constraints          |
 |------------------|---------------|-------------------|----------------------|
@@ -30,7 +32,7 @@
 | `user_id`        | INT           | ユーザーのID       | FK                   |
 | `location_id`    | INT           | 地点のID           | FK                   |
 
-## EmergencyContacts
+## EmergencyContacts (緊急連絡先情報)
 
 | Field            | Type          | Description       | Constraints          |
 |------------------|---------------|-------------------|----------------------|
@@ -42,12 +44,31 @@
 | `line_id`        | VARCHAR(255)  | ラインのID         | NULL許容, 検討中    |
 | `user_id`        | INT           | ユーザーのID       | FK                   |
 
-## Feedbacks
+## WeatherData (釣行気象履歴)
+
+| Field              | Type          | Description             | Constraints            |
+|--------------------|---------------|-------------------------|------------------------|
+| `weather_data_id`  | INT           | 天気データの一意識別子   | PK, AI, UQ             |
+| `location_id`      | INT           | 地点の一意識別子         | FK                     |
+| `trip_id`          | INT           | 出船予定の一意識別子     | FK, NULL許容           |
+| `timestamp`        | DATETIME      | 観測日時                 | NN                     |
+| `temperature`      | FLOAT         | 気温（°C）              |                        |
+| `wind_speed`       | FLOAT         | 風速（m/s）             |                        |
+| `wind_direction`   | VARCHAR(255)  | 風向                   |                        |
+| `wave_height`      | FLOAT         | 波の高さ（m）           |                        |
+| `weather_condition`| VARCHAR(255)  | 天気の状態              |                        |
+| `tide`             | VARCHAR(255)  | 潮の状態                |                        |
+| `tide_level`       | FLOAT         | 潮位（m）               | NULL許容               |
+
+
+## Feedbacks (フィードバック)
 
 | Field            | Type          | Description       | Constraints          |
 |------------------|---------------|-------------------|----------------------|
 | `feedback_id`    | INT           | フィードバックの一意識別子 | PK, AI, UQ       |
 | `comment`        | TEXT          | コメント           | NN                   |
-| `created_at`     | DATETIME      | 作成日時           | NN                   |
+
+
 | `user_id`        | INT           | ユーザーのID       | FK                   |
 
+![alt text](ER.png)
