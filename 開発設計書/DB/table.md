@@ -29,8 +29,11 @@
 | `date_time`      | DATETIME      | 出船の日付と時間   | NN                   |
 | `details`        | TEXT          | 予定の詳細情報     | NULL許容            |
 | `safety_score`   | INT           | 安全スコア         | NN                   |
+| `sunrise_time`       | DATETIME         | 日の出時刻               | NULL許容               |
+| `sunset_time`       | DATETIME         | 日の入り時刻               | NULL許容               |
 | `user_id`        | INT           | ユーザーのID       | FK                   |
 | `location_id`    | INT           | 地点のID           | FK                   |
+
 
 ## EmergencyContacts (緊急連絡先情報)
 
