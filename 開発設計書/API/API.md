@@ -52,6 +52,25 @@
 - DELETE `/api/trips/{trip_id}`
   - 特定の出船予定を削除します。
 ---
+## Trip Return (帰投情報)
+
+#### 帰投情報の記録
+- POST `/api/trips/{trip_id}/return`
+  - ユーザーが無事帰投したことを記録します。帰投時刻やその他の詳細情報を含むことができます。
+
+#### 帰投情報の確認
+- GET `/api/trips/{trip_id}/return`
+  - 特定のトリップの帰投情報を取得します。ユーザーが予定通りに帰投したかどうかの確認に使用します。
+
+#### 帰投情報の更新
+- PUT `/api/trips/{trip_id}/return`
+  - すでに記録された帰投情報を更新します。例えば、帰投時間の変更や、追加の詳細情報を記録する場合に使用します。
+
+#### 帰投情報の削除
+- DELETE `/api/trips/{trip_id}/return`
+  - 誤って入力された帰投情報を削除します。
+
+---
 ## Trip history
 #### 特定のトリップに関連する天気データの一覧取得
 - **GET** `/api/trips/{trip_id}/weather`

@@ -34,6 +34,14 @@
 | `user_id`        | INT           | ユーザーのID       | FK                   |
 | `location_id`    | INT           | 地点のID           | FK                   |
 
+## TripReturn (帰投情報)
+
+| Field            | Type        | Description               | Constraints            |
+|------------------|-------------|---------------------------|------------------------|
+| `return_id`      | INT         | 帰投情報の一意識別子       | PK, AI, UQ             |
+| `trip_id`        | INT         | 関連する出船予定の一意識別子 | FK                     |
+| `return_time`    | DATETIME    | 帰投時刻                   |                        |
+| `return_details` | TEXT        | 帰投に関する詳細情報       | NULL許容               |
 
 ## EmergencyContacts (緊急連絡先情報)
 
