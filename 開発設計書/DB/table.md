@@ -67,29 +67,6 @@
 
 ---
 
-<!-- ## ForecastData (気象予報データ)
-
-| Field                | Type          | Description                     | Constraints            |
-|----------------------|---------------|---------------------------------|------------------------|
-| `forecast_data_id`   | INT           | 気象予報データの一意識別子       | PK, AI, UQ             |
-| `forecast_time`      | DATETIME      | 予報対象の日時                   | NN                     |
-| `temperature`        | FLOAT         | 予測される気温（°C）            |                        |
-| `wind_speed`         | FLOAT         | 予測される風速（m/s）           |                        |
-| `wind_direction`     | VARCHAR(255)  | 予測される風向                   |                        |
-| `wave_height`        | FLOAT         | 予測される波の高さ（m）         |                        |
-| `weather_condition`  | VARCHAR(255)  | 予測される天気の状態            |                        |
-| `tide`               | VARCHAR(255)  | 予測される潮の状態              |                        |
-| `tide_level`         | FLOAT         | 予測される潮位（m）             | NULL許容               |
-
-## TripForecast (トリップと気象予報の関連)
-
-| Field                | Type          | Description                     | Constraints            |
-|----------------------|---------------|---------------------------------|------------------------|
-| `trip_forecast_id`   | INT           | トリップと気象予報の関連ID      | PK, AI, UQ             |
-| `trip_id`            | INT           | トリップの一意識別子            | FK                     |
-| `forecast_data_id`   | INT           | 気象予報データの一意識別子      | FK                     | -->
-
-
 ## WeatherData (気象データ)
 
 | Field              | Type          | Description             | Constraints            |
