@@ -125,15 +125,21 @@
 - レスポンスボディ:
 ```json
 {
-  "weather_data_id": "天気データID",
-  "trip_id": "トリップID",
-  "date": "日付",
-  "temperature": "温度",
-  "weather_condition": "天候状況",
-  "wind_speed": "風速",
-  "wind_direction": "風向き",
-  "humidity": "湿度",
-  "additional_info": "追加情報"
+  "user_id":"ユーザーID",
+
+  "trip_data":{
+    
+  },
+  "weather_data":{
+    "date": "日付",
+    "temperature": "温度",
+    "weather_condition": "天候状況",
+    "wind_speed": "風速",
+    "wind_direction": "風向き",
+    "humidity": "湿度",
+    "tide":"潮",
+    "tide_level":"潮位"
+  }
 }
 ```
 

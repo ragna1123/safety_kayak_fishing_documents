@@ -10,6 +10,8 @@
 | `password_hash`   | VARCHAR(255) | パスワードのハッシュ値 | NN                 |
 | `profile_image_url` | VARCHAR(255) | プロフィール画像のURL | NULL許容           |
 
+---
+
 ## Locations (地点)
 
 | Field            | Type          | Description       | Constraints          |
@@ -63,22 +65,55 @@
 | `email`          | VARCHAR(255)  | メールアドレス     | NULL許容, UQ        |
 | `line_id`        | VARCHAR(255)  | ラインのID         | NULL許容, 検討中    |
 
+---
+
+## ForecastData (気象予報データ)
+
+| Field                | Type          | Description                     | Constraints            |
+|----------------------|---------------|---------------------------------|------------------------|
+| `forecast_data_id`   | INT           | 気象予報データの一意識別子       | PK, AI, UQ             |
+| `forecast_time`      | DATETIME      | 予報対象の日時                   | NN                     |
+| `temperature`        | FLOAT         | 予測される気温（°C）            |                        |
+| `wind_speed`         | FLOAT         | 予測される風速（m/s）           |                        |
+| `wind_direction`     | VARCHAR(255)  | 予測される風向                   |                        |
+| `wave_height`        | FLOAT         | 予測される波の高さ（m）         |                        |
+| `weather_condition`  | VARCHAR(255)  | 予測される天気の状態            |                        |
+| `tide`               | VARCHAR(255)  | 予測される潮の状態              |                        |
+| `tide_level`         | FLOAT         | 予測される潮位（m）             | NULL許容               |
+
+## TripForecast (トリップと気象予報の関連)
+
+| Field                | Type          | Description                     | Constraints            |
+|----------------------|---------------|---------------------------------|------------------------|
+| `trip_forecast_id`   | INT           | トリップと気象予報の関連ID      | PK, AI, UQ             |
+| `trip_id`            | INT           | トリップの一意識別子            | FK                     |
+| `forecast_data_id`   | INT           | 気象予報データの一意識別子      | FK                     |
+
+
 ## WeatherData (気象データ)
 
 | Field              | Type          | Description             | Constraints            |
 |--------------------|---------------|-------------------------|------------------------|
 | `weather_data_id`  | INT           | 天気データの一意識別子   | PK, AI, UQ             |
-| `location_id`      | INT           | 地点の一意識別子         | FK                     |
+| `weather_condition`| VARCHAR(255)  | 天気の状態              |                        |
 | `trip_id`          | INT           | 出船予定の一意識別子     | FK, NULL許容           |
 | `timestamp`        | DATETIME      | 観測日時                 | NN                     |
 | `temperature`      | FLOAT         | 気温（°C）              |                        |
 | `wind_speed`       | FLOAT         | 風速（m/s）             |                        |
 | `wind_direction`   | VARCHAR(255)  | 風向                   |                        |
 | `wave_height`      | FLOAT         | 波の高さ（m）           |                        |
-| `weather_condition`| VARCHAR(255)  | 天気の状態              |                        |
 | `tide`             | VARCHAR(255)  | 潮の状態                |                        |
 | `tide_level`       | FLOAT         | 潮位（m）               | NULL許容               |
 
+## TripWeather (トリップと気象予報の関連)
+
+| Field                | Type          | Description                     | Constraints            |
+|----------------------|---------------|---------------------------------|------------------------|
+| `trip_weather_id`   | INT           | トリップと気象の関連ID      | PK, AI, UQ             |
+| `trip_id`            | INT           | トリップの一意識別子            | FK                     |
+| `weather_data_id`   | INT           | 気象データの一意識別子      | FK                     |
+
+---
 
 ## Feedbacks (フィードバック)
 
