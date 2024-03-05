@@ -10,7 +10,7 @@
 | `password_hash`   | VARCHAR(255) | パスワードのハッシュ値 | NN                 |
 | `profile_image_url` | VARCHAR(255) | プロフィール画像のURL | NULL許容           |
 
-## Locations (釣行ポイント)
+## Locations (地点)
 
 | Field            | Type          | Description       | Constraints          |
 |------------------|---------------|-------------------|----------------------|
@@ -33,13 +33,14 @@
 | Field            | Type          | Description       | Constraints          |
 |------------------|---------------|-------------------|----------------------|
 | `trip_id`        | INT           | 出船予定の一意識別子 | PK, AI, UQ          |
-| `date_time`      | DATETIME      | 出船の日付と時間   | NN                   |
-| `details`        | TEXT          | 予定の詳細情報     | NULL許容            |
+| `user_id`        | INT           | ユーザーのID       | FK                   |
+| `location_id`    | INT           | 地点のID           | FK                   |
+| `departure_time`      | DATETIME | 出発時刻           | NN                   |
+| `estimated_return_time` | DATETIME | 予定帰投時刻      | NN                   |
+| `details`        | TEXT          | 予定の詳細情報      | NULL許容            |
 | `safety_score`   | INT           | 安全スコア         | NN                   |
 | `sunrise_time`       | DATETIME         | 日の出時刻               | NULL許容               |
 | `sunset_time`       | DATETIME         | 日の入り時刻               | NULL許容               |
-| `user_id`        | INT           | ユーザーのID       | FK                   |
-| `location_id`    | INT           | 地点のID           | FK                   |
 
 ## TripReturn (帰投情報)
 
@@ -55,14 +56,14 @@
 | Field            | Type          | Description       | Constraints          |
 |------------------|---------------|-------------------|----------------------|
 | `contact_id`     | INT           | 緊急連絡先の一意識別子 | PK, AI, UQ         |
+| `user_id`        | INT           | ユーザーのID       | FK                   |
 | `name`           | VARCHAR(255)  | 緊急連絡先の名前   | NN                   |
 | `relationship`   | VARCHAR(255)  | 関係               | NN                   |
 | `phone_number`   | VARCHAR(20)   | 電話番号           | NULL許容            |
 | `email`          | VARCHAR(255)  | メールアドレス     | NULL許容, UQ        |
 | `line_id`        | VARCHAR(255)  | ラインのID         | NULL許容, 検討中    |
-| `user_id`        | INT           | ユーザーのID       | FK                   |
 
-## WeatherData (釣行気象履歴)
+## WeatherData (気象データ)
 
 | Field              | Type          | Description             | Constraints            |
 |--------------------|---------------|-------------------------|------------------------|
