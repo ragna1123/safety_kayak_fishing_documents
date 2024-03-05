@@ -85,6 +85,7 @@
 | Field            | Type          | Description       | Constraints          |
 |------------------|---------------|-------------------|----------------------|
 | `feedback_id`    | INT           | フィードバックの一意識別子 | PK, AI, UQ       |
+| `title`          | TEXT          | お問い合わせ件名         | NN               |
 | `comment`        | TEXT          | コメント           | NN                   |
 | `user_id`        | INT           | ユーザーのID       | FK                   |
 
