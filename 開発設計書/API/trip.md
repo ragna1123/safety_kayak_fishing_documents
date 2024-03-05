@@ -28,13 +28,18 @@
 ```json
 "data":[
   {
-    "trip_id": "出船予定ID",
+    "trip_id":"出船予定の一意識別子",
     "user_id": "ユーザーID",
-    "location_id": "地点ID",
     "departure_time": "出発時刻",
     "estimated_return_time": "予定帰投時刻",
     "details": "詳細情報",
-    "safety_score": "安全スコア"
+    "safety_score": "安全スコア",
+    "location_data": {
+      "name":"地点の名称",
+      "description":"地点の説明",
+      "latitude":"緯度",
+      "longitude":"経度"
+    }
   },
   {...}
 ]

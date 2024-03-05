@@ -17,8 +17,6 @@
 | Field            | Type          | Description       | Constraints          |
 |------------------|---------------|-------------------|----------------------|
 | `location_id`    | INT           | 地点の一意識別子   | PK, AI, UQ           |
-| `name`           | VARCHAR(255)  | 地点の名称         | NN                   |
-| `description`    | TEXT          | 地点の説明         | NULL許容            |
 | `latitude`       | DECIMAL(10, 8)| 緯度               | NN                   |
 | `longitude`      | DECIMAL(11, 8)| 経度               | NN                   |
 
@@ -29,6 +27,8 @@
 | `favorite_id`  | INT         | お気に入りの一意識別子  | PK, AI, UQ             |
 | `user_id`      | INT         | ユーザーの一意識別子    | FK                     |
 | `location_id`  | INT         | 地点の一意識別子        | FK                     |
+| `name`           | VARCHAR(255)  | 地点の名称         | NN                   |
+| `description`    | TEXT          | 地点の説明         | NULL許容            |
 
 ## Trips (出船スケジュール)
 
@@ -67,7 +67,7 @@
 
 ---
 
-## ForecastData (気象予報データ)
+<!-- ## ForecastData (気象予報データ)
 
 | Field                | Type          | Description                     | Constraints            |
 |----------------------|---------------|---------------------------------|------------------------|
@@ -87,7 +87,7 @@
 |----------------------|---------------|---------------------------------|------------------------|
 | `trip_forecast_id`   | INT           | トリップと気象予報の関連ID      | PK, AI, UQ             |
 | `trip_id`            | INT           | トリップの一意識別子            | FK                     |
-| `forecast_data_id`   | INT           | 気象予報データの一意識別子      | FK                     |
+| `forecast_data_id`   | INT           | 気象予報データの一意識別子      | FK                     | -->
 
 
 ## WeatherData (気象データ)
