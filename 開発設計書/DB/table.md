@@ -40,7 +40,7 @@
 | `departure_time`      | DATETIME | 出発時刻           | NN                   |
 | `estimated_return_time` | DATETIME | 予定帰投時刻      | NN                   |
 | `details`        | TEXT          | 予定の詳細情報      | NULL許容            |
-| `safety_score`   | INT           | 安全スコア         | NN                   |
+| `safety_score`   | INT           | 安全スコア         | NULL許容            |
 | `sunrise_time`       | DATETIME         | 日の出時刻               | NULL許容               |
 | `sunset_time`       | DATETIME         | 日の入り時刻               | NULL許容               |
 
@@ -50,7 +50,7 @@
 |------------------|-------------|---------------------------|------------------------|
 | `return_id`      | INT         | 帰投情報の一意識別子       | PK, AI, UQ             |
 | `trip_id`        | INT         | 関連する出船予定の一意識別子 | FK                     |
-| `return_time`    | DATETIME    | 帰投時刻                   |                        |
+| `return_time`    | DATETIME    | 帰投時刻                   | NN                    |
 | `return_details` | TEXT        | 帰投に関する詳細情報       | NULL許容               |
 
 ## EmergencyContacts (緊急連絡先情報)
@@ -62,7 +62,7 @@
 | `name`           | VARCHAR(255)  | 緊急連絡先の名前   | NN                   |
 | `relationship`   | VARCHAR(255)  | 関係               | NN                   |
 | `phone_number`   | VARCHAR(20)   | 電話番号           | NULL許容            |
-| `email`          | VARCHAR(255)  | メールアドレス     | NULL許容, UQ        |
+| `email`          | VARCHAR(255)  | メールアドレス     | NN, UQ        |
 | `line_id`        | VARCHAR(255)  | ラインのID         | NULL許容, 検討中    |
 
 ---
@@ -72,14 +72,13 @@
 | Field              | Type          | Description             | Constraints            |
 |--------------------|---------------|-------------------------|------------------------|
 | `weather_data_id`  | INT           | 天気データの一意識別子   | PK, AI, UQ             |
-| `weather_condition`| VARCHAR(255)  | 天気の状態              |                        |
-| `trip_id`          | INT           | 出船予定の一意識別子     | FK, NULL許容           |
+| `weather_condition`| VARCHAR(255)  | 天気の状態              | NN                    |
 | `timestamp`        | DATETIME      | 観測日時                 | NN                     |
-| `temperature`      | FLOAT         | 気温（°C）              |                        |
-| `wind_speed`       | FLOAT         | 風速（m/s）             |                        |
-| `wind_direction`   | VARCHAR(255)  | 風向                   |                        |
-| `wave_height`      | FLOAT         | 波の高さ（m）           |                        |
-| `tide`             | VARCHAR(255)  | 潮の状態                |                        |
+| `temperature`      | FLOAT         | 気温（°C）              | NN                      |
+| `wind_speed`       | FLOAT         | 風速（m/s）             | NN                     |
+| `wind_direction`   | VARCHAR(255)  | 風向                   | NN                     |
+| `wave_height`      | FLOAT         | 波の高さ（m）           | NN                     |
+| `tide`             | VARCHAR(255)  | 潮の状態                | NULL許容               |
 | `tide_level`       | FLOAT         | 潮位（m）               | NULL許容               |
 
 ## TripWeather (トリップと気象予報の関連)
@@ -102,4 +101,4 @@
 | `user_id`        | INT           | ユーザーのID       | FK                   |
 
 
-![alt text](ER.png)
+![alt text](ER.png)ge
