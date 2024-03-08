@@ -1,0 +1,32 @@
+version: '3.8'
+services:
+  db:
+    image: postgres:16
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: myapp_development
+      POSTGRES_USER: haga
+      POSTGRES_PASSWORD: 1123haga
+      TZ: "Asia/Tokyo"
+
+    ports:
+      - "5432:5432"
+
+  app:
+    build: ./safety-kayak-fishing-backend
+    command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
+    volumes:
+      - ./safety-kayak-fishing-backend:/myapp
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+    environment:
+      POSTGRES_HOST: db
+      POSTGRES_USER: haga
+      POSTGRES_PASSWORD: 1123haga
+      POSTGRES_DB: myapp_development
+
+volumes:
+  postgres-data:
