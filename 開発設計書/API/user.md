@@ -6,16 +6,19 @@
 - リクエストボディ:
 ```json
 {
-  "username":"ユーザー名",
-  "email":"メールアドレス",
-  "password":"パスワード",
-  "password_confirmation": "パスワード(確認)"
+  "user":{
+    "username":"ユーザー名",
+    "email":"メールアドレス",
+    "password":"パスワード",
+    "password_confirmation": "パスワード(確認)"
+  }
 }
 ```
 - ステータスコード: `201 Created`
 - レスポンスボディ:
 ```json
 {
+  "status":"success",
   "message":"ユーザーの登録に成功しました"
 }
 ```
@@ -26,8 +29,10 @@
 - リクエストボディ:
 ```json
 {
-  "email": "メールアドレス",
-  "password": "パスワード"
+  "user":{
+    "email": "メールアドレス",
+    "password": "パスワード"
+  }
 }
 ```
 - ステータスコード: `200 OK`
@@ -38,26 +43,30 @@
 }
 ```
 ### ユーザー情報取得
-- メソッド: GET `/api/users/{user_id}`
-- 説明: ユーザーIDに基づいてユーザー情報を取得します。
+- メソッド: GET `/api/users`
+- 説明: ユーザーIDに基づいて自身のユーザー情報を取得します。
 - ステータスコード: `200 OK`
 - レスポンスボディ:
 ```json
 {
-  "username": "ユーザー名",
-  "email": "メールアドレス",
-  "profile_image": "プロフィール画像URL"
+  "user":{
+    "username": "ユーザー名",
+    "email": "メールアドレス",
+    "profile_image": "プロフィール画像URL"
+  }
 }
 ```
 
 ### ユーザー情報更新
-- メソッド: PUT `/api/users/{user_id}`
+- メソッド: PUT `/api/users`
 - 説明: ユーザー名やプロフィール画像など、ユーザー情報を更新します。
 - リクエストボディ:
 ```json
 {
-  "username": "新しいユーザー名",
-  "profile_image": "新しいプロフィール画像URL"
+  "user":{
+    "username": "新しいユーザー名",
+    "profile_image": "新しいプロフィール画像URL"
+  }
 }
 ```
 - ステータスコード: `200 OK`
@@ -65,5 +74,23 @@
 ```json
 {
   "message": "ユーザー情報の更新に成功しました"
+}
+```
+
+### ユーザー情報削除
+- メソッド: DELETE `/api/users`
+- 説明: ユーザー情報を削除します。
+- リクエストボディ:
+```json
+{
+  "password":"パスワード",
+  "password_confirmation": "パスワード(確認)"
+}
+```
+- ステータスコード: `200 OK`
+- レスポンスボディ:
+```json
+{
+  "message": "ユーザー情報の削除に成功しました"
 }
 ```

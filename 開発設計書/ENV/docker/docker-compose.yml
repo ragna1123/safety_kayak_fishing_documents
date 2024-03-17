@@ -27,6 +27,7 @@ services:
       POSTGRES_USER: haga
       POSTGRES_PASSWORD: 1123haga
       POSTGRES_DB: myapp_development
+      TZ: "Asia/Tokyo"
 
 volumes:
   postgres-data:
