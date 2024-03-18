@@ -5,23 +5,21 @@
 - リクエストボディ:
 ```json
 {
-  "name": "山田太郎",
-  "relationship": "友人",
-  // "phone_number": "090-1234-5678",
-  "email": "taro@example.com",
-  // "line_id": "taro_line"
+  "emergency_contact":{
+    "name": "山田太郎",
+    "relationship": "友人",
+    // "phone_number": "090-1234-5678",
+    "email": "taro@example.com",
+    // "line_id": "taro_line"
+  }
 }
 ```
 - ステータスコード: `201 Created`
 - レスポンスボディ:
 ```json
 {
-  "contact_id": 1,
-  "name": "山田太郎",
-  "relationship": "友人",
-  // "phone_number": "090-1234-5678",
-  "email": "taro@example.com",
-  // "line_id": "taro_line"
+    "status": "success",
+    "message": "緊急連絡先が登録されました"
 }
 ```
 
@@ -31,17 +29,20 @@
 - ステータスコード: `200 OK`
 - レスポンスボディ:
 ```json
-"data": [
-  {
-    "contact_id": 1,
-    "name": "山田太郎",
-    "relationship": "友人",
-    // "phone_number": "090-1234-5678",
-    "email": "taro@example.com",
-    // "line_id": "taro_line"
-  },
-  // 他の緊急連絡先...
-]
+{
+  "status":"success",
+  "data": [
+    {
+      "contact_id": 1,
+      "name": "山田太郎",
+      "relationship": "友人",
+      // "phone_number": "090-1234-5678",
+      "email": "taro@example.com",
+      // "line_id": "taro_line"
+    },
+    {...}// 他の緊急連絡先...
+  ]
+}
 ```
 
 #### 緊急連絡先の更新
@@ -50,23 +51,21 @@
 - リクエストボディ:
 ```json
 {
-  "name": "山田太郎",
-  "relationship": "友人",
-  // "phone_number": "090-1234-5678",
-  "email": "taro@example.com",
-  // "line_id": "taro_line"
+  "emergency_contact":{
+    "name": "山田太郎",
+    "relationship": "友人",
+    // "phone_number": "090-1234-5678",
+    "email": "taro@example.com",
+    // "line_id": "taro_line"
+  }
 }
 ```
 - ステータスコード: `200 OK`
 - レスポンスボディ:
 ```json
 {
-  "contact_id": 1,
-  "name": "山田太郎",
-  "relationship": "友人",
-  // "phone_number": "090-1234-5678",
-  "email": "taro@example.com",
-  // "line_id": "taro_line"
+    "status": "success",
+    "message": "緊急連絡先が更新されました"
 }
 ```
 
@@ -77,6 +76,7 @@
 - レスポンスボディ:
 ```json
 {
-  "massage":"緊急連絡先を削除しました。"
+    "status": "success",
+    "message": "緊急連絡先が削除されました"
 }
 ```

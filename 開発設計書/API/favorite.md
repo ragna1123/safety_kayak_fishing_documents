@@ -1,15 +1,17 @@
 ## Favorites
 
 ### お気に入り地点の登録
-- POST `/api/favorites`
+- POST `/api/favorite_locations`
 - 機能: ユーザーが指定した地点をお気に入りとして登録します。
 - リクエストボディ:
 ```json
 {
-  "name":"地点の名称",
+  "location_name":"地点の名称",
   "description":"地点の説明",
-  "latitude":"緯度",
-  "longitude":"経度"
+  "location_data":{
+    "latitude":"緯度",
+    "longitude":"経度"
+  }
 }
 
 ```
@@ -32,7 +34,7 @@
 
 
 ### お気に入り地点の一覧取得
-- GET `/api/favorites`
+- GET `/api/favorite_locations`
 - 特定のユーザーのお気に入り地点の一覧を取得します。
 - ステータスコード `200 OK`
 - レスポンスボディ:
@@ -53,7 +55,7 @@
 ```
 
 ### お気に入り地点の削除
-- DELETE `/api/favorites/{favorite_id}`
+- DELETE `/api/favorite_locations/{favorite_id}`
 - 説明:特定のお気に入り地点を削除します。
 - ステータスコード `200 OK`
 - レスポンスボディ:
