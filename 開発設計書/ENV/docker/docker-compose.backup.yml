@@ -1,17 +1,22 @@
 version: '3.8'
 services:
   db:
-    image: postgres:16
+    image: postgres:16.2-alpine3.19
     volumes:
       - postgres-data:/var/lib/postgresql/data
     environment:
       POSTGRES_DB: myapp_development
       POSTGRES_USER: haga
       POSTGRES_PASSWORD: 1123haga
-      TZ: "Asia/Tokyo"
-
     ports:
       - "5432:5432"
+
+  redis:
+    image: redis:7.2.4-alpine
+    volumes:
+      - redis-data:/data
+    ports:
+      - "6379:6379"
 
   app:
     build: ./safety-kayak-fishing-backend
@@ -22,11 +27,14 @@ services:
       - "3000:3000"
     depends_on:
       - db
+      - redis
     environment:
       POSTGRES_HOST: db
       POSTGRES_USER: haga
       POSTGRES_PASSWORD: 1123haga
       POSTGRES_DB: myapp_development
+      REDIS_URL: redis://redis:6379/0
 
 volumes:
   postgres-data:
+  redis-data:
