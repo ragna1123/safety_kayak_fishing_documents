@@ -1,100 +1,105 @@
 ## ユーザー関連のAPI
+URL = http://localhost:3000/api
 
 ### ユーザー登録
-- **POST** `/api/users`
+- **POST** `/users`
   - 新しいユーザーを登録します。
 
 ### ユーザーログイン
-- **POST** `/api/users/login`
+- **POST** `/users/login`
   - メールアドレスとパスワードを受け取り、認証トークンを返します。
 
 ### ユーザー情報取得
-- **GET** `/api/users`
+- **GET** `/users`
   - ユーザーIDに基づいてユーザー情報を取得します。
 
 ### ユーザー情報更新
-- **PUT** `/api/users`
+- **PUT** `/users`
   - ユーザー名やプロフィール画像など、ユーザー情報を更新します。
 
 ## お気に入り地点関連のAPI
 
 ### お気に入り地点の登録
-- **POST** `/api/favorites`
+- **POST** `/favorites`
   - ユーザーIDと地点IDを受け取り、新しいお気に入り地点を登録します。
 
 ### お気に入り地点の一覧取得
-- **GET** `/api/favorites`
+- **GET** `/favorites`
   - 登録されたお気に入り地点の一覧を取得します。
 
 ### お気に入り地点の削除
-- **DELETE** `/api/favorites/{favorite_id}`
+- **DELETE** `/favorites/{favorite_id}`
   - 特定のお気に入り地点を削除します。
 
 ## 出船スケジュール関連のAPI
 
 ### 出船予定の登録
-- **POST** `/api/trips`
+- **POST** `/trips`
   - 新しい出船予定を登録します。
 
 ### 出船予定の取得
-- **GET** `/api/trips/{trips_id}`
+- **GET** `/trips/{trips_id}`
   - 登録された出船予定を取得します。
 
 ### 出船予定の一覧取得
-- **GET** `/api/trips`
+- **GET** `/trips`
+  - 登録された出船予定の一覧を取得します。
+  - 
+### 出船中の予定取得
+- **GET** `/trips/active`
   - 登録された出船予定の一覧を取得します。
 
 ### 出船予定の更新
-- **PUT** `/api/trips/{trip_id}`
+- **PUT** `/trips/{trip_id}`
   - 特定の出船予定を更新します。
 
 ### 出船予定の削除
-- **DELETE** `/api/trips/{trip_id}`
+- **DELETE** `/trips/{trip_id}`
   - 特定の出船予定を削除します。
 
 ## Trip Return (帰投情報)
 
 ### 帰投済み一覧の取得
-- **GET** `/api/trips/returned`
+- **GET** `/trips/returned`
   - 登録された帰投済みの予定一覧を取得します。
 
 ### 未帰投一覧
-- **GET** `/api/trips/unreturned`
+- **GET** `/trips/unreturned`
   - 登録された未帰投の予定の一覧を取得します。
 
 ### 帰投情報の記録
-- **PUT** `/api/trips/{trip_id}/return`
+- **PUT** `/trips/{trip_id}/return`
   - ユーザーが無事帰投したことを記録します。帰投時刻やその他の詳細情報を含むことができます。
 
 ## Trip history (トリップ履歴)
 ### トリップ履歴一覧取得
-- **GET** `/api/trips/histories`
+- **GET** `/trips/histories`
 - ユーザーのトリップ履歴の一覧を取得します。これにより、ユーザーは過去に行ったトリップの詳細情報を確認することができます。
 
 ### 特定のトリップ履歴と特定の天気データの取得
-- **GET** `/api/trips/{trip_id}/history`
+- **GET** `/trips/{trip_id}/history`
 - 特定のトリップに関連する特定の天気データを取得します。これは、トリップの詳細ページで特定の時点の天気情報を表示する場合などに利用できます。
 
 ## 緊急連絡先関連のAPI
 
 ### 緊急連絡先の登録
-- **POST** `/api/emergency_contacts`
+- **POST** `/emergency_contacts`
   - 新しい緊急連絡先を登録します。
 
 ### 緊急連絡先の一覧取得
-- **GET** `/api/emergency_contacts`
+- **GET** `/emergency_contacts`
   - 登録された緊急連絡先の一覧を取得します。
 
 ### 緊急連絡先の更新
-- **PUT** `/api/emergency_contacts/{contact_id}`
+- **PUT** `/emergency_contacts/{contact_id}`
   - 特定の緊急連絡先を更新します。
 
 ### 緊急連絡先の削除
-- **DELETE** `/api/emergency_contacts/{contact_id}`
+- **DELETE** `/emergency_contacts/{contact_id}`
   - 特定の緊急連絡先を削除します。
 
 ## お問い合わせ関連のAPI
 
 ### お問い合わせの送信
-- **POST** `/api/feedbacks`
+- **POST** `/feedbacks`
 - ユーザーからのフィードバックを登録します。

@@ -29,17 +29,21 @@
 
 ### フレームワーク
 
-- Ruby on Rails(API)
+- Ruby on Rails(APIモード)
 
 ### ライブラリ
 
 - ActionMailer(メール送信)
 - JWT(認証)
-- sideqik(時刻で処理を起動させる※今回はメール送信に使用)
+- sideqik
+  (時刻で処理を起動させる非同期処理ライブラリ※今回はメール送信,LINEアラート機能に使用)
 
 ## データベース
 
+#### RDB
 - Postglesql
+#### NoSQL
+- Redis(sidekiqに使用)
 
 ## 外部 API
 
@@ -50,4 +54,5 @@
 ### 天気予報,潮位関係
 
 - StormGlassIo
+- Visualcrossing
 - SunriseSunsetAPI
