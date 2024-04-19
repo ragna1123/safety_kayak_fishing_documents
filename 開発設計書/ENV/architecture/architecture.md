@@ -8,42 +8,53 @@
 
 ### ライブラリ
 
+### 状態管理
+
+- Recoil
+
 ### nodejs
+
 - TypeScript
 
 ### フェッチング、キャッシュ関係
-- Axios
-- RWS
 
-### CSS,UI関係
+- Axios
+- RWS?
+
+### CSS,UI 関係
 
 - TailwindCSS
 - Daisy UI
 - Hero Icons
 
 ### テスト関係
+
 - Jest
 
- ---
+  ***
+
 ## バックエンド
 
 ### フレームワーク
 
-- Ruby on Rails(APIモード)
+- Ruby on Rails(API モード)
 
 ### ライブラリ
 
 - ActionMailer(メール送信)
 - JWT(認証)
 - sideqik
-  (時刻で処理を起動させる非同期処理ライブラリ※今回はメール送信,LINEアラート機能に使用)
+  (時刻で処理を起動させる非同期処理ライブラリ※今回はメール送信,LINE アラート機能に使用)
 
 ## データベース
 
 #### RDB
+
 - Postglesql
+
 #### NoSQL
-- Redis(sidekiqに使用)
+
+- Redis(sidekiq に使用)
 
 ## 外部 API
 
