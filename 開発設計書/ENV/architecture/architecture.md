@@ -8,20 +8,20 @@
 
 ### ライブラリ
 
-### 状態管理
-
-- Recoil
-
-### nodejs
+#### 型定義
 
 - TypeScript
 
-### フェッチング、キャッシュ関係
+#### 状態管理
+
+- Recoil
+
+#### フェッチング、キャッシュ関係
 
 - Axios
-- RWS?
+- ~~RWS~~
 
-### CSS,UI 関係
+#### CSS,UI 関係
 
 - TailwindCSS
 - Daisy UI
@@ -29,9 +29,7 @@
 
 ### テスト関係
 
-- Jest
-
-  ***
+- ~~Jest~~
 
 ## バックエンド
 
@@ -43,8 +41,13 @@
 
 - ActionMailer(メール送信)
 - JWT(認証)
-- sideqik
+- sidekiq
   (時刻で処理を起動させる非同期処理ライブラリ※今回はメール送信,LINE アラート機能に使用)
+
+#### テスト
+
+- Rspec
+- factoryBot
 
 ## データベース
 
@@ -64,6 +67,6 @@
 
 ### 天気予報,潮位関係
 
-- StormGlassIo
-- Visualcrossing
-- SunriseSunsetAPI
+- StormGlassIO(海況情報、天気を提供する API)
+- Visualcrossing(週間天気予報を提供する APU)
+- SunriseSunsetAPI(日の出、日の入りを手供する API)
