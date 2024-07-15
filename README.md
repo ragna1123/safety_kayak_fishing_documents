@@ -21,6 +21,8 @@
 
 ```
 
+### 工夫した点
+
 ## GitHub リポジトリ
 
 ### ドキュメント
@@ -35,7 +37,31 @@
 
 [https://github.com/ragna1123/safety-kayak-fishing-backend]
 
-### 画面キャプチャ
+## 画面キャプチャ
+
+### ログイン画面
+
+![alt text](開発設計書/kayak%20SS/ログイン.png)
+
+### ホーム
+
+![alt text](開発設計書/kayak%20SS/ホーム.png)
+
+### マップピンの週間天気と詳細
+
+![alt text](開発設計書/kayak%20SS/地点詳細.png)
+
+### 出船予定登録画面
+
+![alt text](開発設計書/kayak%20SS/出船予定登録.png)
+
+### 出船予定日の天気詳細
+
+![alt text](開発設計書/kayak%20SS/出船予定詳細天気.png)
+
+### 　緊急連絡先登録
+
+![alt text](開発設計書/kayak%20SS/緊急連絡先登録.png)
 
 ## 使用技術
 
